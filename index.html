@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>확인</title>
+    <title>html 기초</title>
 </head>
 <body>
-    <form action="/doc" method="post">
-        <center>
-        <table  width="50%" border="1">
-            <tr>
-                <td colspan="2" align="center"><h1>비밀번호를 입력해주세요</h1></td>
-            </tr>
-            <tr>
-                <td width="20%">비밀번호</td>
-                <td><input width="100%" name="pw"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="submit" style="width: 100%;">들어가기</button></td>
-            </tr>
-        </table>
-    </center>
-    </form>
+    <h1>HTML 기초</h1><br>
+    <iframe name="if" style="height: 80dvh;width: 99dvw;" src="/c/1.html"></iframe>
+    <form id="f" target="if"><select id="action"><option>
+        
+    </option></select></form>
 </body>
+<script>
+    function click(){
+    let f=document.getElementById("f");
+    let action=document.getElementById("action");
+    f.action=`/c/${action.value}`;
+    }
+    
+</script>
 </html>
