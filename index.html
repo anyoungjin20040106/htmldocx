@@ -3,21 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>html 기초</title>
+    <title>웹개발 기초</title>
 </head>
 <body>
-    <h1>HTML 기초</h1><br>
-    <iframe name="if" style="height: 80dvh;width: 99dvw;" src="/c/1.html"></iframe>
-    <form id="f" target="if"><select id="action"><option>
-        
-    </option></select></form>
+    <h1>웹개발 기초</h1><br>
+    <iframe name="if" id="iframe" style="height: 80dvh;width: 99dvw;" src="/c/main.html"></iframe>
+
 </body>
 <script>
-    function click(){
-    let f=document.getElementById("f");
-    let action=document.getElementById("action");
-    f.action=`/c/${action.value}`;
-    }
-    
 </script>
 </html>
