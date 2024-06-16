@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>h태그</h2>
+    <p>글자를 입력하다보면 글자를 크게하고 싶을떄가 있습니다. 이럴떄는 &lt;h숫자&gt;&lt;/h숫자&gt; 안에 글자를 입력하시면 됩니다. 또한 h태그는 자동으로 줄바꿈이 됩니다.<br>body태그안에 아래의 코드를 추가해봅시다</p>
+    <textarea id="code" cols="21" rows="7" readonly></textarea>
+    <h3>결과</h3>
+    <div id="result"></div>
+</body>
+<script>
+    let result=document.getElementById("result");
+    let code=document.getElementById("code");
+    let str="";
+    for(i=1;i<7;i++)
+        str+=`<h${i}>이건 h${i}태그</h${i}>\n`;
+    str+="다양한 h태그들이다";
+    code.innerHTML=str;
+    result.innerHTML=str.replace("\n","");
+</script>
+</html>
