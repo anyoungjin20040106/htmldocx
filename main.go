@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"math/rand"
 	"net/http"
 	"os"
 	"text/template"
@@ -19,7 +18,7 @@ func Warning(w http.ResponseWriter, msg string) {
 	warning.Execute(w, data)
 }
 func main() {
-	port := fmt.Sprintf(":%d", rand.Intn(8999)+1000)
+	port := fmt.Sprintf(":%d", 1596)
 	fileServer := http.FileServer(http.Dir("./chapter"))
 	http.Handle("/c/", http.StripPrefix("/c/", fileServer))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
