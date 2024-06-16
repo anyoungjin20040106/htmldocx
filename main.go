@@ -20,14 +20,13 @@ func Warning(w http.ResponseWriter, msg string) {
 func main() {
 	port := fmt.Sprintf(":%d", 10000)
 	fileServer := http.FileServer(http.Dir("./chapter"))
-	http.Handle("/c/", http.StripPrefix("/c/", fileServer))
+	http.Handle("/view/", http.StripPrefix("/view/", fileServer))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})
 
 	http.HandleFunc("/doc", func(w http.ResponseWriter, r *http.Request) {
 		pw := r.FormValue("pw")
-		fmt.Println(r.Method)
 		if r.Method != "POST" {
 			Warning(w, "암호를 입력해주세요")
 		} else if pw != os.Getenv("pw") {
