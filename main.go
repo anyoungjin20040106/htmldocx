@@ -18,7 +18,7 @@ func Warning(w http.ResponseWriter, msg string) {
 	warning.Execute(w, data)
 }
 func main() {
-	port := fmt.Sprintf(":%d", 1596)
+	port := fmt.Sprintf(":%d", 10000)
 	fileServer := http.FileServer(http.Dir("./chapter"))
 	http.Handle("/c/", http.StripPrefix("/c/", fileServer))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
