@@ -5,38 +5,38 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"text/template"
+
+	"github.com/gin-gonic/gin"
 )
 
-func Warning(w http.ResponseWriter, msg string) {
-	warning, _ := template.ParseFiles("warning.html")
-	data := struct {
-		MSG string
-	}{
-		msg,
-	}
-	warning.Execute(w, data)
-}
 func main() {
-	port := fmt.Sprintf(":%d", 10000)
-	fileServer := http.FileServer(http.Dir("./chapter"))
-	http.Handle("/view/", http.StripPrefix("/view/", fileServer))
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "index.html")
+	// 포트 설정
+	port := fmt.Sprintf(":%d", 1234)
+
+	// Gin 라우터 생성
+	router := gin.Default()
+
+	// 정적 파일 서버 설정 ("/chapter" 디렉토리를 "/c" 경로로 제공)
+	router.Static("/c", "./chapter")
+
+	// 기본 라우트 설정 (index.html 제공)
+	router.GET("/", func(c *gin.Context) {
+		c.File("index.html")
 	})
 
-	http.HandleFunc("/doc", func(w http.ResponseWriter, r *http.Request) {
-		pw := r.FormValue("pw")
-		if r.Method != "POST" {
-			Warning(w, "암호를 입력해주세요")
-		} else if pw != os.Getenv("pw") {
-			Warning(w, "암호가 틀렸습니다")
+	// /doc 라우트 설정 (POST 요청 처리)
+	router.POST("/doc", func(c *gin.Context) {
+		pw := c.PostForm("pw")
+		if pw != os.Getenv("pw") {
+			c.String(http.StatusUnauthorized, "암호가 틀렸습니다")
 		} else {
-			http.ServeFile(w, r, "doc.html")
+			c.File("doc.html")
 		}
 	})
+
+	// 서버 시작
 	log.Println("Server started on " + port)
-	err := http.ListenAndServe(port, nil)
+	err := router.Run(port)
 	if err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
