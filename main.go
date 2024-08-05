@@ -11,21 +11,21 @@ import (
 
 func main() {
 	// 포트 설정
-	port := fmt.Sprintf(":%d", 1234)
+	port := fmt.Sprintf(":%d", 4321)
 
 	// Gin 라우터 생성
-	router := gin.Default()
+	r := gin.Default()
 
 	// 정적 파일 서버 설정 ("/chapter" 디렉토리를 "/c" 경로로 제공)
-	router.Static("/c", "./chapter")
+	r.Static("/c", "./chapter")
 
 	// 기본 라우트 설정 (index.html 제공)
-	router.GET("/", func(c *gin.Context) {
+	r.GET("/", func(c *gin.Context) {
 		c.File("index.html")
 	})
 
 	// /doc 라우트 설정 (POST 요청 처리)
-	router.POST("/doc", func(c *gin.Context) {
+	r.POST("/doc", func(c *gin.Context) {
 		pw := c.PostForm("pw")
 		if pw != os.Getenv("pw") {
 			c.String(http.StatusUnauthorized, "암호가 틀렸습니다")
@@ -36,7 +36,7 @@ func main() {
 
 	// 서버 시작
 	log.Println("Server started on " + port)
-	err := router.Run(port)
+	err := r.Run(port)
 	if err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}

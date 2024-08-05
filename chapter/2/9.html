@@ -4,86 +4,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML 테이블 만들기</title>
 </head>
 
 <body>
-    <h2>테이블 만들기</h2>
-    <p>이번에는 HTML로 테이블을 만드는 방법을 배워보겠습니다. 테이블을 사용하면 데이터를 구조적으로 정리하여 표현할 수 있습니다. 테이블을 만드는 기본 코드는 아래와 같습니다:</p>
-    <textarea cols="60" rows="7" readonly>
-<table border="1" align="center">
-    <tr>
-        <th>Header 1</th>
-        <th>Header 2</th>
-        <th>Header 3</th>
-    </tr>
-    <tr>
-        <td colspan="2">Data spanning two columns</td>
-        <td>Data 3</td>
-    </tr>
-    <tr>
-        <td rowspan="2">Data spanning two rows</td>
-        <td>Data 2</td>
-        <td>Data 3</td>
-    </tr>
-    <tr>
-        <td>Data 2.1</td>
-        <td>Data 3.1</td>
-    </tr>
-</table>
-    </textarea>
-    <p>위의 코드는 다양한 속성을 사용한 테이블의 예시입니다. 이제 테이블 요소와 속성에 대해 자세히 알아보겠습니다.</p>
-    
-    <table border="1">
-        <tr>
-            <th>요소</th>
-            <th>설명</th>
-            <th>필수 여부</th>
-        </tr>
-        <tr>
-            <td align="center">&lt;table&gt;</td>
-            <td>테이블의 전체 구조를 정의하는 요소입니다. <code>border</code> 속성은 테이블의 테두리를 설정하며, <code>align</code> 속성은 테이블의 정렬을 설정합니다. 예: <code>&lt;table border="1" align="center"&gt;</code></td>
-            <td align="center">O</td>
-        </tr>
-        <tr>
-            <td align="center">&lt;tr&gt;</td>
-            <td>테이블의 한 행(row)을 정의하는 요소입니다.</td>
-            <td align="center">O</td>
-        </tr>
-        <tr>
-            <td align="center">&lt;th&gt;</td>
-            <td>테이블의 헤더 셀을 정의하는 요소로, 보통 굵게 표시되고 가운데 정렬됩니다.</td>
-            <td align="center">X</td>
-        </tr>
-        <tr>
-            <td align="center">&lt;td&gt;</td>
-            <td>테이블의 데이터 셀을 정의하는 요소입니다.</td>
-            <td align="center">O</td>
-        </tr>
-        <tr>
-            <td align="center">align</td>
-            <td>테이블 또는 셀의 내용을 좌, 우, 중앙에 정렬할 수 있습니다. 예: <code>&lt;td align="center"&gt;</code></td>
-            <td align="center">X</td>
-        </tr>
-        <tr>
-            <td align="center">border</td>
-            <td>테이블의 셀과 셀 사이에 테두리를 설정합니다. 숫자가 클수록 테두리가 두꺼워집니다. 예: <code>border="1"</code></td>
-            <td align="center">X</td>
-        </tr>
-        <tr>
-            <td align="center">colspan</td>
-            <td>셀 하나가 여러 열(column)을 차지할 수 있도록 설정합니다. 예: <code>&lt;td colspan="2"&gt;</code>는 셀이 두 개의 열에 걸쳐 있음을 나타냅니다.</td>
-            <td align="center">X</td>
-        </tr>
-        <tr>
-            <td align="center">rowspan</td>
-            <td>셀 하나가 여러 행(row)을 차지할 수 있도록 설정합니다. 예: <code>&lt;td rowspan="2"&gt;</code>는 셀이 두 개의 행에 걸쳐 있음을 나타냅니다.</td>
-            <td align="center">X</td>
-        </tr>
-    </table>
 
-    <p>테이블에서는 <code>colspan</code>과 <code>rowspan</code> 속성을 사용하여 셀이 여러 열이나 행에 걸쳐 나타나도록 할 수 있습니다. 이 속성들을 사용하면 복잡한 테이블 레이아웃을 쉽게 만들 수 있습니다.</p>
+    <h2>ul & ol & li</h2>
+    <p>이거를 구현해볼까요?</p>
+        <ul>
+            <li>C언어 계열</li>
+            <ul>
+                <li>C</li><li>C++</li><li>C#</li>
+            </ul>
+            <li>golang</li>
+            <li>Python</li>
+            <li>JAVA</li>
+            <li>PHP</li>
+            <li>RUST</li>
+            <li>Ada</li>
+        </ul>
+        <p>•이나 o을 입력하는건 귀찮습니다.</p><p>그리고 이것도 구현해볼까요?</p>
+        <ol>
+            <li>C언어 계열</li>
+            <ul>
+                <li>C</li><li>C++</li><li>C#</li>
+            </ul>
+            <li>golang</li>
+            <li>Python</li>
+            <li>JAVA</li>
+            <li>PHP</li>
+            <li>RUST</li>
+            <li>Ada</li>
+        </ol>
+        <p>만약 중간에 숫자가 빠지는 실수를 할수 있겠죠?</p>
+            <h3>ol 태그</h3>
+    <p>ol 태그는 순서가 있는 목록를 만들 때 사용합니다. 각 항목은 자동으로 번호가 매겨집니다.</p>
+    <p>예시:</p>
+        <textarea rows="6" readonly>
+<ol>
+    <li>항목 1</li>
+    <li>항목 2</li>
+    <li>항목 3</li>
+</ol>
+        </textarea><br>    <p>결과:</p>
+        <ol>
+            <li>항목 1</li>
+            <li>항목 2</li>
+            <li>항목 3</li>
+        </ol>
 
-    <p>이제 직접 예시 코드를 사용하여 다양한 형태의 테이블을 만들어 보세요!</p>
+    <h3>ul 태그</h3>
+    <p>ul 태그는 순서가 없는 목록를 만들 때 사용합니다. 항목 앞에는 점 또는 다른 기호가 붙습니다.</p>
+    <p>예시:</p>
+    <textarea rows="6" cols="" readonly>
+<ul>
+    <li>항목 A</li>
+    <li>항목 B</li>
+    <li>항목 C</li>
+</ul>
+</textarea><br>    <p>결과:</p>
+<ul>
+    <li>항목 A</li>
+    <li>항목 B</li>
+    <li>항목 C</li>
+</ul>
+
+    <h3>li 태그</h3>
+    <p>li 태그는  ol 또는 ul 태그 내에서 각각의 항목을 나타낼 때 사용합니다.</p>
+    <p>예시:</p>
+    <textarea rows="6" cols="25" readonly>
+<ul>
+    <li>첫 번째 항목</li>
+    <li>두 번째 항목</li>
+    <li>세 번째 항목</li>
+</ul>
+</textarea><br>    <p>결과:</p>
+<li>첫 번째 항목</li>
+<li>두 번째 항목</li>
+<li>세 번째 항목</li>
+</ul>
+
+    <h3>무엇이든지 넣을수 있는 목록</h3>
+    <p>목록은 중첩하여 사용할 수 있습니다.</p>
+    <p>예시:</p>
+    <textarea rows="20" cols="200" readonly>
+        <ul>
+            <li>
+                <a href="https://www.nintendo.co.kr/hardware/" target="_blank">내가 좋아하는 게임</a>
+            </li>
+            <li>내가 좋아하는 뮤지컬 : 
+                <a href="https://tickets.interpark.com/goods/24005971" target="_blank">프랑켄슈타인</a>, 
+                <a href="https://tickets.interpark.com/goods/24010223" target="_blank">킹키부츠</a>
+            </li>
+            <li>내가 좋아하는 배우</li>
+                <ul>
+                    <li>
+                        규현<br>
+                        <a href="https://www.youtube.com/watch?v=obz9dwj7zgM" target="_blank">
+                            <img height="100" src="https://pbs.twimg.com/media/GLP-IjtbgAA4GQm.jpg:large">
+                        </a>
+                    </li>
+                    <li>
+                        카이<br><a href="https://www.youtube.com/watch?v=-5siXSGECOw" target="_blank"><img height="100" src="https://cdn.hankyung.com/photo/202408/01.37540784.1.jpg"></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+</textarea>
+<ul>
+    <li>
+        <a href="https://www.nintendo.co.kr/hardware/" target="_blank">내가 좋아하는 게임</a>
+    </li>
+    <li>내가 좋아하는 뮤지컬 : 
+        <a href="https://tickets.interpark.com/goods/24005971" target="_blank">프랑켄슈타인</a>, 
+        <a href="https://tickets.interpark.com/goods/24010223" target="_blank">킹키부츠</a>
+    </li>
+    <li>내가 좋아하는 배우</li>
+        <ul>
+            <li>
+                규현<br>
+                <a href="https://www.youtube.com/watch?v=obz9dwj7zgM" target="_blank">
+                    <img height="100" src="https://pbs.twimg.com/media/GLP-IjtbgAA4GQm.jpg:large">
+                </a>
+            </li>
+            <li>
+                카이<br><a href="https://www.youtube.com/watch?v=-5siXSGECOw" target="_blank"><img height="100" src="https://cdn.hankyung.com/photo/202408/01.37540784.1.jpg"></a>
+            </li>
+        </ul>
+    </li>
+</ul>
 </body>
 </html>
