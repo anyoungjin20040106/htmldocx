@@ -10,8 +10,8 @@
 <body>
     <h2>테이블 만들기</h2>
     <p>이번에는 HTML로 테이블을 만드는 방법을 배워보겠습니다. 테이블을 사용하면 데이터를 구조적으로 정리하여 표현할 수 있습니다. 테이블을 만드는 기본 코드는 아래와 같습니다:</p>
-    <textarea cols="60" rows="7" readonly>
-<table border="1" align="center">
+    <textarea cols="60" rows="21" readonly>
+<table border="1">
     <tr>
         <th>Header 1</th>
         <th>Header 2</th>
@@ -32,6 +32,26 @@
     </tr>
 </table>
     </textarea>
+    <table border="1">
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td colspan="2">Data spanning two columns</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Data spanning two rows</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 2.1</td>
+            <td>Data 3.1</td>
+        </tr>
+    </table>
     <p>위의 코드는 다양한 속성을 사용한 테이블의 예시입니다. 이제 테이블 요소와 속성에 대해 자세히 알아보겠습니다.</p>
     
     <table border="1">
