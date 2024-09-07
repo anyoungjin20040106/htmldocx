@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 화면을 만들어 보자</title>
+</head>
+
+<body>
+    <h2>입력 화면을 만들어 보자</h2>
+    <p>이번에는 HTML로 입력 화면을 만들어 보겠습니다 입력화면 만드는법은 아래와 같습니다</p>
+    <textarea cols="150" rows="16" readonly>
+<form action="https://input-test.onrender.com" method="post">
+    닉네임 : <input type="text" name="name"><br>
+    비밀번호 : <input type="password" name="pw"><br>
+    티어 : <input type="radio" name="tier" value="브론즈">브론즈
+    <input type="radio" name="tier" value="실버">실버
+    <input type="radio" name="tier" value="골드">골드
+    <input type="radio" name="tier" value="다이아">다이아
+    <input type="radio" name="tier" value="마스터">마스터
+    <input type="radio" name="tier" value="그랜드 마스터">그랜드 마스터<br>
+    할줄아는 영웅 : <input type="checkbox" name="hero" value="토르비욘">토르비욘
+    <input type="checkbox" name="hero" value="D.va">D.va
+    <input type="checkbox" name="hero" value="시메트라">시메트라
+    <input type="checkbox" name="hero" value="라인하르트">라인하르트
+    <input type="checkbox" name="hero" value="시그마">시그마<br>
+    <button type="submit">제출하기</button>
+</form></textarea><br>
+<form action="https://input-test.onrender.com" method="post">
+    닉네임 : <input type="text" name="name"><br>
+    비밀번호 : <input type="password" name="pw"><br>
+    티어 : <input type="radio" name="tier" value="브론즈">브론즈
+    <input type="radio" name="tier" value="실버">실버
+    <input type="radio" name="tier" value="골드">골드
+    <input type="radio" name="tier" value="다이아">다이아
+    <input type="radio" name="tier" value="마스터">마스터
+    <input type="radio" name="tier" value="그랜드 마스터">그랜드 마스터<br>
+    할줄아는 영웅 : <input type="checkbox" name="hero" value="토르비욘">토르비욘
+    <input type="checkbox" name="hero" value="D.va">D.va
+    <input type="checkbox" name="hero" value="시메트라">시메트라
+    <input type="checkbox" name="hero" value="라인하르트">라인하르트
+    <input type="checkbox" name="hero" value="시그마">시그마<br>
+    <button type="submit">제출하기</button>
+</form>
+    <p>위의 코드는 다양한 속성들의 입력 요소들과 버튼입니다</p>
+    <h3>form 태그 분석</h3>
+    <table border="1">
+        <tr>
+            <th>요소</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td align="center">action</td>
+            <td>제출 후 갈 위치 입니다</td>
+        </tr>
+        <tr>
+            <td align="center">method</td>
+            <td>제출 방식입니다(Get, Post)</td>
+        </tr>
+    </table>
+    <h3>제출방식</h3>
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td align="center">Get</td>
+            <td>URL에 변수명과 값을 넣어서 보내는 방식입니다</td>
+        </tr>
+        <tr>
+            <td align="center">Get</td>
+            <td>URL에 변수명과 값을 넣지않고 보내는 방식입니다</td>
+        </tr>
+    </table>
+    <h3>input 태그 분석</h3>
+    <table border="1">
+        <tr>
+            <th>요소</th>
+            <th>설명</th>
+            <th>필수 여부</th>
+        </tr>
+        <tr>
+            <td align="center">type</td>
+            <td>입력 종류 입니다. 글자를 입력받거나 체크박스등 다양한 종류를 지정할 수 있습니다(기본값 : text)</td>
+            <td align="center">X</td>
+        </tr>
+        <tr>
+            <td align="center">name</td>
+            <td>해당 요소의 이름입니다</td>
+            <td align="center">O</td>
+        </tr>
+        <tr>
+            <td align="center">value</td>
+            <td>해당 요소의 값 입니다</td>
+            <td align="center">X</td>
+        </tr>
+    </table>
+    <h3>input의 type종류</h3>
+    <table border="1">
+        <tr>
+            <th>종류</th>
+            <th>설명</th>
+            <th>생김새</th>
+        </tr>
+        <tr>
+            <td align="center">text</td>
+            <td>글자를 입력받기 위한 입력요소 입니다</td>
+            <td align="center"><input type="text"></td>
+        </tr>
+        <tr>
+            <td align="center">password</td>
+            <td>비밀번호를 입력받기 위한 입력요소입니다</td>
+            <td align="center"><input type="password"></td>
+        </tr>
+        <tr>
+            <td align="center">checkbox</td>
+            <td>체크박스로 name이 같을 때 여러개의 항목을 선택할수 있습니다</td>
+            <td align="center"><input type="checkbox" name="radio"><input type="checkbox" name="radio"></td>
+        </tr>
+    </table>
+    <p>이제 직접 예시 코드를 사용하여 다양한 형태의 입력 화면을 만들어 보세요!</p>
+</body>
+</html>
