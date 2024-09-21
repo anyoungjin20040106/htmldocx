@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 변수 배우기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h2>변수를 배워보자</h2>
+    <p>자바스크립트에서 변수를 선언하는 방법인 <code>let</code>과 <code>const</code>를 알아보겠습니다.</p>
+    
+    <textarea cols="80" rows="6" readonly>
+<button onclick="
+let r = prompt('반지름을 입력해주세요');
+const PI = 3.14;
+alert('원의 넓이 : ' + r * r * PI);
+">원의 넓이 구하기</button>
+    </textarea><br>
+    <button onclick="
+    let r = prompt('반지름을 입력해주세요');
+    const PI = 3.14159265358979;
+    alert('원의 넓이 : ' + r * r * PI);
+    ">원의 넓이 구하기</button>
+
+    <h2>코드 분석</h2>
+    <table border="1">
+        <tr>
+            <th>요소</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td align="center"><code>let</code></td>
+            <td>변수를 선언할 때 사용하며, 이후 값 변경이 가능합니다.</td>
+        </tr>
+        <tr>
+            <td align="center"><code>const</code></td>
+            <td>상수를 선언할 때 사용하며, 선언 후 값 변경이 불가능합니다.</td>
+        </tr>
+        <tr>
+            <td align="center"><code>prompt()</code></td>
+            <td>사용자로부터 입력을 받을 때 사용하는 함수입니다.</td>
+        </tr>
+    </table>
+</body>
+</html>
